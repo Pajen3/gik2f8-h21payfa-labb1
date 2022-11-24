@@ -6,6 +6,10 @@ window.addEventListener('load', () => {
   getAll().then((apiBooks) => (bookList = apiBooks));
 });
 
+
+
+
+//Detta sätter dit funktionen för sökrutan
 searchField.addEventListener('keyup', (e) =>
   renderBookList(
     bookList.filter(({ title, author }) => {
@@ -17,6 +21,9 @@ searchField.addEventListener('keyup', (e) =>
     })
   )
 );
+
+
+
 
 function renderBookList(bookList) {
   const existingElement = document.querySelector('.book-list');
