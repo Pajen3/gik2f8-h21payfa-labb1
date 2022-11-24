@@ -1,6 +1,9 @@
+//Detta anvönder man för att få hjälp när man skriver koder. 
 'use strict';
-
 let bookList = [];
+
+
+
 
 window.addEventListener('load', () => {
   getAll().then((apiBooks) => (bookList = apiBooks));
@@ -9,14 +12,14 @@ window.addEventListener('load', () => {
 
 
 
-//Detta sätter dit funktionen för sökrutan
+//Detta sätter dit funktionen för sökrutan. Tar in värdet. 
 searchField.addEventListener('keyup', (e) =>
   renderBookList(
     bookList.filter(({ title, author }) => {
       const searchTerm = e.target.value.toLowerCase();
       return (
         title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        author.toLowerCase().includes(searchTerm.toLowerCase())
+        author.toLowerCase().includes(searchTerm.toLowerCase()) 
       );
     })
   )
@@ -24,6 +27,9 @@ searchField.addEventListener('keyup', (e) =>
 
 
 
+
+
+//Den här funktionen ritar ut den listan som har skickats till den.
 
 function renderBookList(bookList) {
   const existingElement = document.querySelector('.book-list');
@@ -33,3 +39,7 @@ function renderBookList(bookList) {
   existingElement && root.removeChild(existingElement);
   bookList.length > 0 && searchField.value && root.insertAdjacentHTML('beforeend', BookList(bookList));
 }
+
+
+
+
