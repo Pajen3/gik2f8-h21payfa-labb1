@@ -61,7 +61,7 @@ function change(x){
       document.body.appendChild(div)
       div.innerHTML = `<div class="testing fixed p-4 shadow-md	 border-black	 border-2	 rounded-xl	 bg-grey-700 bg-lime-200	 fixed"> 
       
-      <p>
+      <p class="book_detail">
       
       
       Information om boken. <br>
@@ -69,14 +69,16 @@ function change(x){
       Title:  ${item.title} <br>
       Pages:  ${item.pages}  <br>
       Release date:  ${item.releaseDate}  <br>
-      <img id"imageid" class="img" src="${item.coverImage}">
-      
-      
       </p>
+      <div class="img">
+      <img id"imageid"  src="${item.coverImage}">
+      <p class="txt"> No picture </p>
+      </div>
       </div>`
     }),
   );
 }
+
 
 
 function changeBack(x) {
@@ -89,8 +91,6 @@ function changeBack(x) {
   );
  
 }
-
-
 
 
 
