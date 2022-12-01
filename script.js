@@ -45,12 +45,12 @@ function renderBookList(bookList) {
 
 
 
-
+// Den här kallar jag i funktionerna nedan 
 var div = document.createElement('div');
 
 
+// Den här funktionen skapar och visar popup rutan. 
 function change(x){
-
   let item  
   x.addEventListener('mouseenter',(e) =>
   
@@ -58,9 +58,8 @@ function change(x){
     .then((response) => response.json())
     .then((data) => {
       item = data;
-      document.body.appendChild(div)
-      div.innerHTML = `<div class="testing fixed p-4 shadow-md	 border-black	 border-2	 rounded-xl	 bg-grey-700 bg-lime-200	 fixed"> 
-      
+      div.innerHTML = `<div class="popup fixed p-4 shadow-md	 border-black	 border-2	 rounded-xl	 bg-grey-700 bg-lime-200	 fixed"> 
+    
       <p class="book_detail">
       
       
@@ -76,11 +75,12 @@ function change(x){
       </div>
       </div>`
     }),
+    document.body.appendChild(div)
   );
 }
 
 
-
+// Den här funktionen ser till att pop-up rutan gömms undan när musen lämnar div:en
 function changeBack(x) {
 
   x.addEventListener('mouseleave',() =>  
